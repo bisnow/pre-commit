@@ -1,0 +1,26 @@
+- id: php-cs-fixer
+  name: PHP CS Fixer
+  entry: vendor/bin/php-cs-fixer
+  language: system
+  files: \.php$
+  fail_fast: true
+  args: [ fix, --allow-risky=yes, --no-interaction ]
+  stages: [ pre-commit, pre-merge-commit, pre-push, manual ]
+
+- id: phpstan
+  name: PHPStan
+  entry: vendor/bin/phpstan
+  language: system
+  files: \.php$
+  fail_fast: true
+  args: [ analyse, --memory-limit=2G, --no-interaction ]
+  stages: [ pre-commit, pre-merge-commit, pre-push, manual ]
+
+- id: pint
+  name: Laravel Pint
+  entry: vendor/bin/pint
+  language: system
+  files: \.php$
+  fail_fast: true
+  args: [ --no-interaction ]
+  stages: [ pre-commit, pre-merge-commit, pre-push, manual ]
