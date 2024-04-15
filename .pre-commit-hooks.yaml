@@ -4,7 +4,7 @@
   language: system
   files: \.php$
   fail_fast: true
-  args: [ fix, --allow-risky=yes, --no-interaction ]
+  args: [ fix, --allow-risky=yes, --config=.php-cs-fixer.dist.php, --no-interaction ]
   stages: [ pre-commit, pre-merge-commit, pre-push, manual ]
 
 - id: phpstan
